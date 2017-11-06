@@ -55,41 +55,41 @@ void onXpadEvent (int buttons, int stick_lx, int stick_ly, int stick_rx, int sti
         //ABXY BUTTONS    
         else if(XBOXCONT.read(USBHostXpad::XPAD_PAD_A) == 1){
         lcd.cls();
-        lcd.printf("BUTTON A PRESSED", USBHostXpad::XPAD_PAD_A);
+        lcd.printf("BUTTON A PRESSED");
         servo_L = STANDSTILL;
         servo_R = STANDSTILL;
             }
        else if(XBOXCONT.read(USBHostXpad::XPAD_PAD_B) == 1){
             lcd.cls();
-            lcd.printf("BUTTON B PRESSED", USBHostXpad::XPAD_PAD_B);
+            lcd.printf("BUTTON B PRESSED");
             }
         else if(XBOXCONT.read(USBHostXpad::XPAD_PAD_X) == 1){
             lcd.cls();
-            lcd.printf("BUTTON X PRESSED", USBHostXpad::XPAD_PAD_X);
+            lcd.printf("BUTTON X PRESSED");
             }
        else if(XBOXCONT.read(USBHostXpad::XPAD_PAD_Y) == 1){
             lcd.cls();
-            lcd.printf("BUTTON Y PRESSED", USBHostXpad::XPAD_PAD_Y);
+            lcd.printf("BUTTON Y PRESSED");
             }
             
         //LEFT TRIGGER
        else if(XBOXCONT.read(USBHostXpad::XPAD_TRIGGER_L) <=0.5){
             lcd.cls();
-            lcd.printf("NO SPEED", USBHostXpad::XPAD_PAD_Y);
+            lcd.printf("SLOW SPEED %f", USBHostXpad::XPAD_TRIGGER_L); //Confirm trigger values
             }
        else if(XBOXCONT.read(USBHostXpad::XPAD_TRIGGER_L) <= 1){
             lcd.cls();
-            lcd.printf("FAST SPEED", USBHostXpad::XPAD_PAD_Y);
+            lcd.printf("FAST SPEED %f", USBHostXpad::XPAD_TRIGGER_L); //Confirm trigger values
             }
         
         //RIGHT TRIGGER
         else if(XBOXCONT.read(USBHostXpad::XPAD_TRIGGER_R) <= 0.5){
             lcd.cls();
-            lcd.printf("NO SPEED", USBHostXpad::XPAD_PAD_Y);
+            lcd.printf("SLOW SPEED %f", USBHostXpad::XPAD_TRIGGER_R); //Confirm trigger values
             }
         else if(XBOXCONT.read(USBHostXpad::XPAD_TRIGGER_R) <= 1){
             lcd.cls();
-            lcd.printf("SLOW SPEED", USBHostXpad::XPAD_PAD_Y);
+            lcd.printf("FAST SPEED %f", USBHostXpad::XPAD_TRIGGER_R); //Confirm trigger values
             }
         else {
             servo_L = STANDSTILL;
