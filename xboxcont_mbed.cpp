@@ -5,15 +5,19 @@
 
 Serial pc(USBTX, USBRX);
 C12832 lcd(p5, p7, p6, p8, p11);
+
+/* Code output indicators/verifications; to be disabled or abled when LCD not available
 DigitalOut forward(LED1);
 DigitalOut back(LED2);
 DigitalOut left(LED3);
-DigitalOut right(LED4);
+DigitalOut right(LED4); 
+---*/
 
 
 //Servo
 Servo servo_L(p22);
 Servo servo_R(p21);
+
 //Fastest = 3, Slowest = 1
 float MOVEBACK_SPEED3 = 0.8;
 float MOVEBACK_SPEED2 = 0.7;
@@ -38,7 +42,7 @@ void onXpadEvent (int buttons, int stick_lx, int stick_ly, int stick_rx, int sti
             lcd.locate(0,3);
             servo_L = MOVEBACK_SPEED3;
             servo_R = MOVEFORWARD_SPEED3;
-            Thread::wait(500);
+            Thread::wait(300);
         }
         else if(stick_lx > 16000) {
             lcd.cls();
@@ -47,7 +51,7 @@ void onXpadEvent (int buttons, int stick_lx, int stick_ly, int stick_rx, int sti
             lcd.locate(0,3);
             servo_L = MOVEFORWARD_SPEED3;
             servo_R = MOVEBACK_SPEED3;
-            Thread::wait(500);
+            Thread::wait(300);
             }
         else if(stick_ly < -16000) {
             lcd.cls();
@@ -56,7 +60,7 @@ void onXpadEvent (int buttons, int stick_lx, int stick_ly, int stick_rx, int sti
             lcd.locate(0,3);
             servo_L = MOVEBACK_SPEED3;
             servo_R = MOVEBACK_SPEED3;
-            Thread::wait(500);
+            Thread::wait(300);
         }
         else if(stick_ly > 16000) {
             lcd.cls();
@@ -65,7 +69,7 @@ void onXpadEvent (int buttons, int stick_lx, int stick_ly, int stick_rx, int sti
             lcd.locate(0,3);
             servo_L = MOVEFORWARD_SPEED3;
             servo_R = MOVEFORWARD_SPEED3;
-            Thread::wait(500);
+            Thread::wait(300);
             }
             
             
