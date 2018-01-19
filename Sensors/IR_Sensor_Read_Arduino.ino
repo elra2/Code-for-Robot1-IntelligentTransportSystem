@@ -29,18 +29,18 @@ void setup()
 
 void loop()
 {
-if (digitalRead(IR_SENS_LEFT) == 1){
-  digitalWrite(IR_SENS_LEFTDETECTED, 1);
+if (digitalRead(IR_SENS_LEFT) == HIGH){
+  digitalWrite(IR_SENS_LEFTDETECTED, HIGH);
 }
 
-if (digitalRead(IR_SENS_RIGHT) == 1){
-  digitalWrite(IR_SENS_RIGHTDETECTED, 1);
+if (digitalRead(IR_SENS_RIGHT) == HIGH){
+  digitalWrite(IR_SENS_RIGHTDETECTED, HIGH);
 }
-if (digitalRead(IR_SENS_BACK) == 1){
-  digitalWrite(IR_SENS_BACKDETECTED, 1);
+if (digitalRead(IR_SENS_BACK) == HIGH){
+  digitalWrite(IR_SENS_BACKDETECTED, HIGH);
 }
-if (digitalRead(IR_SENS_FORWARD) == 1){
-  digitalWrite(IR_SENS_FORWARDDETECTED, 1);
+if (digitalRead(IR_SENS_FORWARD) == HIGH){
+  digitalWrite(IR_SENS_FORWARDDETECTED, HIGH);
 }
 }
 
